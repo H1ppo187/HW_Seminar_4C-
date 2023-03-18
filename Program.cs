@@ -10,17 +10,45 @@
 
 // // ----------------------Метод--------------
 
-Console.WriteLine("Введите 2 числа ");
-int A = int.Parse(Console.ReadLine()!);
-int B = int.Parse(Console.ReadLine()!);
-Console.WriteLine($"Число {A} в стеепени {B} равно {ResulDegree(A, B)}");
+// Console.WriteLine("Введите 2 числа ");
+// int A = int.Parse(Console.ReadLine()!);
+// int B = int.Parse(Console.ReadLine()!);
+// Console.WriteLine($"Число {A} в стеепени {B} равно {RezultDegree(A, B)}");
 
-int ResulDegree(int Number, int Degree)
+// int RezultDegree(int Number, int Degree)
+// {
+//     int sum = Number;
+//     for (int i = 2; i <= Degree; i++)
+//     {
+//         sum = sum * Number;
+//     }
+//     return sum;
+// }
+
+// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+
+// 452 -> 11
+
+// 82 -> 10
+
+// 9012 -> 12
+
+
+Console.WriteLine("Введите число ");
+int A = int.Parse(Console.ReadLine()!);
+Console.WriteLine($"Сумма цифр в числе {A} равно {SumOfNumber(A)}");
+
+//----------------------Метод--------------
+
+int SumOfNumber(int number)
 {
-    int sum = Number;
-    for (int i = 2; i <= Degree; i++)
+    int sum = 0;
+    sum = number % 10;
+    number = number /10;
+    while (number > 0 )
     {
-        sum = sum * Number;
-    }
-    return sum;
+      sum = sum+number % 10; 
+      number = number /10;
+    } 
+     return sum;
 }
