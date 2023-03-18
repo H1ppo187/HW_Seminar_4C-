@@ -34,21 +34,38 @@
 // 9012 -> 12
 
 
-Console.WriteLine("Введите число ");
-int A = int.Parse(Console.ReadLine()!);
-Console.WriteLine($"Сумма цифр в числе {A} равно {SumOfNumber(A)}");
+// Console.WriteLine("Введите число ");
+// int A = int.Parse(Console.ReadLine()!);
+// Console.WriteLine($"Сумма цифр в числе {A} равно {SumOfNumber(A)}");
 
 //----------------------Метод--------------
 
-int SumOfNumber(int number)
+// int SumOfNumber(int number)
+// {
+//     int sum = 0;
+//     sum = number % 10;
+//     number = number / 10;
+//     while (number > 0)
+//     {
+//         sum = sum + number % 10;
+//         number = number / 10;
+//     }
+//     return sum;
+// }
+
+// Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран. (числа берете любые)
+
+int number = 8;
+int[]massive =FillMass(number);
+Console.WriteLine($"[{String.Join("; ", massive)}]");
+
+// ---------~~Метод~~-------------//
+int[] FillMass(int size)
 {
-    int sum = 0;
-    sum = number % 10;
-    number = number /10;
-    while (number > 0 )
+    int[] Rezult = new int[size];
+    for (int i = 0; i < size; i++)
     {
-      sum = sum+number % 10; 
-      number = number /10;
-    } 
-     return sum;
+        Rezult[i] = new Random().Next(100);
+    }
+    return Rezult;
 }
